@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>社會影響加速器</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="社會影響加速器"
+      content="社會影響加速器是台中服務設計的社會企業串門子社會設計融合設計思考及方案設計思維所發展的一個網站，為社工、專業工作者、教育訓練人員及公益捐款單位，設計一款加速方案設計與效益評估的優化工具，希望幫助組織更具體傳遞社會影響力。"
+    />
+    <meta
+      name="keywords"
+      content="社會工作,社會服務,家庭方案,老人方案,青少年方案,團體動力,身心障礙,方案效益報告,方案設計,方案計畫,優化工具,設計思考,AI助手,本質思考,服務策略,成果產出,成效影響"
+    />
+    <meta content="網頁設計：雅典娜整合行銷" property="article:author" />
+    <meta http-equiv="expires" content="-1" />
+    <meta http-equiv="pragma" content="cache" />
+    <meta http-equiv="window-target" content="_top" />
+    <meta
+      name="copyright"
+      content="2023 © 串門子社會影響加速器 │ All Rights Reserved."
+    />
+    <meta name="revisit-after" content="1 days" />
+    <meta name="robots" content="all" />
+    <link rel="icon" href="/src/assets/images/link-logo.png" />
+  </head>
+
+  <body>
+    <style>
+      .nosContainer {
+        max-width: 1000px;
+        margin: 80px auto;
+        width: 100%;
+        padding: 0 24px;
+      }
+
+      .box {
+        display: flex;
+        justify-content: center;
+      }
+
+      .box-img {
+        width: 80%;
+        display: block;
+        max-width: 100%;
+      }
+
+      .box-title {
+        font-size: 28px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+      }
+
+      .box-subTitle {
+        font-size: 24px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+    <meta
+      name="google-site-verification"
+      content="Uutt9RfN0INRlILEpN7thWd7E3ixRVweNMvV0mj8mHo"
+    />
+    <noscript>
+      <div class="nosContainer">
+        <div class="box">
+          <img
+            class="box-img"
+            src="/src/assets/images/Logo+typography-300dpi.png"
+            alt="社會影響加速器Logo"
+          />
+        </div>
+        <h1 class="box-title">
+          您的瀏覽器不支援JavaScript功能，若網頁功能無法正常使用時，請開啟瀏覽器JavaScript狀態
+        </h1>
+        <h2 class="box-subTitle">開啟後，請再重新整理此網頁</h2>
+      </div>
+    </noscript>
+    <div id="app">
+      <div class="about mt-0 pt-0 container-fluid">
+        <h2 class="about--img center">
+          <img
+            src="../../assets/images/about.png"
+            class="col-6"
+            alt="關於我們"
+          />
+        </h2>
+        <div class="about--info">
+          <div class="info--box">
+            <div class="info--title center">
+              <h3 class="fs-lg-3xl fs-md-xl fs-sm-base fw-medium lh-lg">
+                — 以終為始的設計 —
+              </h3>
+            </div>
+            <div class="center info--content">
+              <h3 class="lh-lg fs-lg-2xl fs-sm-lg fs-md-sm fw-regular">
+                運用社會服務方案的邏輯系統，幫助你在快速變動的步調中，掌握核心和本質
+              </h3>
+            </div>
+          </div>
+        </div>
+        <div class="about--animation">
+          <div
+            class="animation--box"
+            id="lottie-container"
+            title="本網站發想為以終為始的設計，一、本質思考，二、服務策略，三、成果產出，四、成效影響"
+          ></div>
+          <img
+            src="../../assets/images/PauseCircle.png"
+            :style="animationToolStylePause"
+            alt="點下暫停鍵會暫停播放動畫"
+            class="pause"
+            @click="toggleAnimationPause()"
+          />
+          <img
+            src="../../assets/images/PlayCircle.png"
+            :style="animationToolStylePlay"
+            alt="點下開始鍵會開始播放動畫"
+            class="play"
+            @click="toggleAnimationPlay()"
+          />
+        </div>
+      </div>
+      <div class="situation center">
+        <div class="situation--img center">
+          <img
+            src="../../assets/images/situation.svg"
+            class=""
+            alt="一位女性社工面對著筆電，右手拄著頭苦惱著如何設計方案、尋找社工評估效益工具等問題。"
+          />
+        </div>
+      </div>
+      <div class="slogan">
+        <div class="slogan--box">
+          <p
+            class="fs-lg-8xl fs-md-6xl fs-sm-4xl fw-bold lh-lg center tx-center"
+          >
+            使用社會影響加速器，<br aria-hidden="true" />
+            讓你的方案設計品質超速
+          </p>
+        </div>
+        <div class="slogan--btn center">
+          <RouterLink
+            to="ask"
+            class="btn btn-dark center text-center"
+            title="開始使用"
+            >開始使用</RouterLink
+          >
+        </div>
+      </div>
+      <div class="more">
+        <div class="more--box center">
+          <div class="more--img center">
+            <img
+              src="../../assets/images/logo-more.svg"
+              alt="串門子社會設計有限公司Logo"
+            />
+          </div>
+          <div class="more--content center">
+            <div class="more-title">
+              <p class="fs-lg-2xl fs-md-lg fs-sm-sm">關於我們 ...</p>
+            </div>
+            <div class="more--text">
+              <p class="fs-lg-base fs-sm-xs lh-lg">
+                串門子社會設計為社福團體出身的新創團隊，登錄於台灣公益團體自律聯盟會員及經濟部認證之社會企業。擅長以服務設計融合方案設計，
+                並搭配社會影響力指南，協助社福組織設計出更具脈絡的服務計畫，期盼用社會設計使你我生活更美好。
+              </p>
+            </div>
+            <div class="more--btn">
+              <a
+                type="button"
+                class="btn btn-dark text-center"
+                title="進入串門子社會設計有限公司網站"
+                target="_blank"
+                href="https://thelinkertw.com/ "
+              >
+                深入瞭解我們
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+  </body>
+</html>

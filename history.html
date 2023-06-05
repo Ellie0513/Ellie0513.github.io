@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <title>社會影響加速器</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="社會影響加速器"
+      content="社會影響加速器是台中服務設計的社會企業串門子社會設計融合設計思考及方案設計思維所發展的一個網站，為社工、專業工作者、教育訓練人員及公益捐款單位，設計一款加速方案設計與效益評估的優化工具，希望幫助組織更具體傳遞社會影響力。"
+    />
+    <meta
+      name="keywords"
+      content="社會工作,社會服務,家庭方案,老人方案,青少年方案,團體動力,身心障礙,方案效益報告,方案設計,方案計畫,優化工具,設計思考,AI助手,本質思考,服務策略,成果產出,成效影響"
+    />
+    <meta content="網頁設計：雅典娜整合行銷" property="article:author" />
+    <meta http-equiv="expires" content="-1" />
+    <meta http-equiv="pragma" content="cache" />
+    <meta http-equiv="window-target" content="_top" />
+    <meta
+      name="copyright"
+      content="2023 © 串門子社會影響加速器 │ All Rights Reserved."
+    />
+    <meta name="revisit-after" content="1 days" />
+    <meta name="robots" content="all" />
+    <link rel="icon" href="/src/assets/images/link-logo.png" />
+  </head>
+
+  <body>
+    <style>
+      .nosContainer {
+        max-width: 1000px;
+        margin: 80px auto;
+        width: 100%;
+        padding: 0 24px;
+      }
+
+      .box {
+        display: flex;
+        justify-content: center;
+      }
+
+      .box-img {
+        width: 80%;
+        display: block;
+        max-width: 100%;
+      }
+
+      .box-title {
+        font-size: 28px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+      }
+
+      .box-subTitle {
+        font-size: 24px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+    <meta
+      name="google-site-verification"
+      content="Uutt9RfN0INRlILEpN7thWd7E3ixRVweNMvV0mj8mHo"
+    />
+    <noscript>
+      <div class="nosContainer">
+        <div class="box">
+          <img
+            class="box-img"
+            src="/src/assets/images/Logo+typography-300dpi.png"
+            alt="社會影響加速器Logo"
+          />
+        </div>
+        <h1 class="box-title">
+          您的瀏覽器不支援JavaScript功能，若網頁功能無法正常使用時，請開啟瀏覽器JavaScript狀態
+        </h1>
+        <h2 class="box-subTitle">開啟後，請再重新整理此網頁</h2>
+      </div>
+    </noscript>
+    <div id="app">
+      <nav class="navbar navbar-expand-lg bg-light fixed-top">
+        <div class="container-fluid my-4 px-md-8">
+          <div class="navbar--logo col-auto">
+            <!-- <h1 title="社會影響加速器"> -->
+            <RouterLink
+              to="/"
+              title="社會影響加速器:回首頁"
+              class="navbar-brand logo--img bg-light"
+              aria-hidden="“true”"
+            >
+              社會影響加速器
+            </RouterLink>
+            <!-- </h1> -->
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav" title="主選單">
+              <li class="nav-item nav--about me-3">
+                <RouterLink
+                  to="about"
+                  class="nav-link px-5 py-2 fs-xl fw-regular rounded-1 text-dark center"
+                  >關於我們</RouterLink
+                >
+              </li>
+              <li class="nav-item nav--contact me-3">
+                <RouterLink
+                  to="contact"
+                  class="nav-link px-5 py-2 fs-xl fw-regular rounded-1 text-dark center"
+                  >聯絡我們</RouterLink
+                >
+              </li>
+              <li class="nav-item nav--login me-3">
+                <RouterLink
+                  to="login"
+                  class="nav-link px-5 py-2 fs-xl fw-regular rounded-1 btn btn-outline-dark"
+                  >會員登入
+                </RouterLink>
+              </li>
+
+              <li class="nav-item nav--register me-3">
+                <RouterLink
+                  to="register"
+                  class="nav-link px-5 py-2 fs-xl fw-regular rounded-1 btn btn-dark"
+                  >會員註冊
+                </RouterLink>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- main -->
+      <div :class="{ active: isLoading }" class="loading-overlay">
+        <div class="d-flex flex-column align-items-center gap-9">
+          <div class="loading"></div>
+          <p class="text-secondary fs-3xl">答案正在前進的路上！</p>
+        </div>
+      </div>
+      <div :class="{ active: isFull }" class="loading-overlay">
+        <div class="d-flex flex-column align-items-center gap-9">
+          <div class="loading"></div>
+          <p class="text-secondary fs-3xl">您已達回覆上限！</p>
+          <button
+            type="button"
+            class="btn btn-secondary py-2 px-5"
+            @click="isFull = false"
+          >
+            我知道了
+          </button>
+        </div>
+      </div>
+      <div class="history mt-0 pt-0 container-fluid">
+        <div class="history--img center col">
+          <img src="@/assets/images/history.png" class="col-6" alt="歷史紀錄" />
+        </div>
+        <div>
+          <div class="row">
+            <!-- side bar start-->
+            <!-- side bar end -->
+            <!-- <div class="dropdown">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropdown button
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </div> -->
+            <!-- side bar start-->
+            <div class="sidebar col-3">
+              <ul class="sidebar--menu">
+                <li class="main-menu hover--menu">
+                  <RouterLink
+                    to="account"
+                    :class="{
+                      'active-nav-account': $route.path !== '/history',
+                      'active-nav-white': $route.path === '/history'
+                    }"
+                    >基本資料</RouterLink
+                  >
+                </li>
+                <li class="main-menu">
+                  <RouterLink to="plan" class="disabled-link"
+                    >方案列表</RouterLink
+                  >
+                </li>
+                <li class="main-menu hover--menu" @click="toggleDropdown">
+                  <RouterLink
+                    to="history"
+                    disabled
+                    class="d-flex justify-content-between"
+                    :class="{
+                      'active-nav-account': $route.path !== '/account',
+                      'active-nav-white': $route.path === '/account'
+                    }"
+                  >
+                    <p>歷史紀錄</p>
+                    <div>
+                      <font-awesome-icon :icon="['fas', 'angle-down']" />
+                    </div>
+                  </RouterLink>
+                </li>
+                <div
+                  id="dropdown-menu"
+                  class="cursor-pointer"
+                  v-show="dropdownOpen"
+                >
+                  <li
+                    v-for="answerHistoryItem in answerHistoryList"
+                    :key="answerHistoryItem.questions_id"
+                    id="dropdown-list"
+                    @click="changeChat(answerHistoryItem.questions_id)"
+                    :class="{
+                      'active-nav-account': selectedQuestionId === answerHistoryItem.questions_id
+                    }"
+                  >
+                    <a class="d-flex align-items-center py-3 gap-2 ps-11">
+                      <font-awesome-icon icon="fa-solid fa-comment-dots" />
+                      <p class="">
+                        {{ answerHistoryItem.questions_keyword.split(/、|\//)[0]
+                        }}
+                      </p>
+                    </a>
+                  </li>
+                </div>
+              </ul>
+            </div>
+            <!-- side bar end -->
+            <div class="content col-9">
+              <div class="history--box">
+                <div class="history--form">
+                  <div class="form--box row">
+                    <div class="form--title p-0 m-0">
+                      <div class="img--box">
+                        <img src="../../assets/images/comment.svg" />
+                      </div>
+                      <div class="title--box">
+                        <h2
+                          class="fs-lg-3xl fs-md-xl fs-sm-base fw-medium lh-lg"
+                        >
+                          {{ questionsKeyword.split(/、|\//)[0] }}
+                        </h2>
+                      </div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="form--info p-0 mb-6">
+                      <div class="d-flex w-100">
+                        <div class="form--input me-2">
+                          <label for="name" class="form-label" title="你的身份"
+                            >01 你的身份</label
+                          >
+                          <p class="form-control">
+                            {{ question.questions_member_type }}
+                          </p>
+                        </div>
+                        <div class="form--input w-100">
+                          <label
+                            for="name"
+                            class="form-label"
+                            title="你需要的協助<"
+                            >02 你需要的協助</label
+                          >
+                          <p class="form-control">
+                            {{ question.questions_type }}
+                          </p>
+                        </div>
+                      </div>
+                      <div class="mb-3 mt-3 message w-100 service">
+                        <label
+                          for="message"
+                          class="form-label"
+                          title="你的服務雛型"
+                          >03 你的服務雛型</label
+                        >
+                        <p class="form-control">
+                          {{ question.questions_content }}
+                        </p>
+                      </div>
+                    </div>
+                    <div class="line m-0 mb-5"></div>
+
+                    <ul class="d-flex flex-column gap-7">
+                      <li
+                        v-for="(responseItem, index) in currentResponses"
+                        :key="responseItem.questions_id"
+                      >
+                        <div class="d-flex gap-10 align-items-center mb-5">
+                          <h1 class="fs-2xl">
+                            第{{ numberToChinese(index + 1) }}次問答結果
+                          </h1>
+                          <button
+                            type="button"
+                            class="btn btn-primary d-flex"
+                            @click="copyHistoryAnswer(index)"
+                          >
+                            <font-awesome-icon icon="fa-solid fa-clone" />
+                            內文複製
+                          </button>
+                        </div>
+                        <div>
+                          <div
+                            class="border overflow-y-auto"
+                            style="height: 391px"
+                          >
+                            <p class="px-3 py-2" ref="historyAnswer">
+                              {{ responseItem.answers_content }}
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <div class="center answer--btn d-flex gap-7">
+                      <RouterLink
+                        to="ask"
+                        class="btn btn-outline-dark center"
+                        title="重新發問"
+                        >重新發問</RouterLink
+                      >
+                      <button
+                        type="button"
+                        class="btn btn-primary center"
+                        title="有沒有其他答案"
+                        @click="askAgain"
+                      >
+                        有沒有其他答案
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- main -->
+    </div>
+    <script type="module" src="/src/main.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+  </body>
+</html>

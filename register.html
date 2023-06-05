@@ -148,110 +148,46 @@
         </div>
       </nav>
       <!-- main -->
-      <div class="contact mt-0 pt-0 container-fluid">
-        <h2 class="contact--img center">
-          <img
-            src="../../assets/images/contact.png"
-            class="col-6"
-            alt="聯絡我們"
-          />
-        </h2>
-        <div class="contact--info center">
-          <div class="info--box">
-            <div class="info--title center">
-              <h3 class="fs-lg-3xl fs-md-xl fs-sm-base fw-medium lh-lg">
-                — 我們會在3個工作天內回覆您 —
-              </h3>
-            </div>
-            <div class="center info--content">
-              <h3 class="lh-lg fs-lg-xl fs-sm fs-md-lg fw-regular">
-                除了目前網站的服務以外，若有其他合作的期待，歡迎聯絡我們。
-              </h3>
-            </div>
+      <div class="container">
+        <div class="row justify-content-center mb-11 pt-11">
+          <h2 class="col-lg-8">
+            <img
+              src="../../assets/images/Logo+typography-300dpi.png"
+              alt="社會影響加速器"
+            />
+          </h2>
+        </div>
+
+        <h3 class="fs-3xl text-center mb-7">需註冊為會員，才可以使用系統</h3>
+        <div class="row justify-content-center gap-7">
+          <div class="col-lg-4">
+            <button
+              type="button"
+              class="btn btn-outline-gray-600 w-100 d-flex justify-content-center align-items-center gap-2 mb-7"
+              @click="handleGoogleAccessTokenLogin"
+            >
+              <img
+                class="w-6n"
+                src="../../assets/images/google-logo.svg"
+                alt="使用GOOGLE帳號登入"
+              />
+              使用 Google 進行註冊
+            </button>
+
+            <button
+              type="button"
+              class="btn btn-outline-gray-600 w-100 d-flex justify-content-center align-items-center gap-2"
+              @click="memberLineLogin('register')"
+            >
+              <img
+                class="w-6n"
+                src="@/assets/images/line-logo.svg"
+                alt="line"
+              />
+              使用 LINE 帳號註冊
+            </button>
           </div>
         </div>
-        <VForm ref="contactForm" v-slot="{ errors }" @submit="sendMessage">
-          <div class="contact--form row center">
-            <div class="form--box col-lg-4 col-6">
-              <div class="mb-3">
-                <label for="contactName" class="form-label"
-                  >姓名<span class="fs-base text-danger" aria-hidden="ture"
-                    >*</span
-                  ></label
-                >
-                <VField
-                  type="text"
-                  class="form-control required"
-                  id="contactName"
-                  placeholder="請輸入姓名"
-                  name="姓名"
-                  :class="{ 'is-invalid': errors['姓名'] }"
-                  rules="required"
-                  v-model="contactData.customers_name"
-                />
-                <ErrorMessage name="姓名" class="invalid-feedback" />
-              </div>
-              <div class="mb-3">
-                <label for="contactEmail" class="form-label"
-                  >電子信箱<span class="fs-base text-danger" aria-hidden="ture"
-                    >*</span
-                  ></label
-                >
-                <VField
-                  type="email"
-                  class="form-control required"
-                  id="contactEmail"
-                  aria-describedby="emailHelp"
-                  placeholder="請輸入電子信箱"
-                  name="電子信箱"
-                  :class="{ 'is-invalid': errors['電子信箱'] }"
-                  rules="email|required"
-                  v-model="contactData.customers_email"
-                />
-                <ErrorMessage name="電子信箱" class="invalid-feedback" />
-              </div>
-              <div class="mb-3">
-                <label for="contactSubject" class="form-label">主旨</label>
-                <input
-                  type="text"
-                  class="form-control required"
-                  id="contactSubject"
-                  placeholder="請輸入主旨"
-                  v-model="contactData.contacts_subject"
-                />
-              </div>
-              <div class="mb-3 message center">
-                <label for="message" class="form-label"
-                  >訊息<span class="fs-base text-danger" aria-hidden="ture"
-                    >*</span
-                  ></label
-                >
-                <VField
-                  type="text"
-                  class="form-control required"
-                  id="message"
-                  placeholder="請輸入訊息(限300字內)"
-                  name="請輸入訊息"
-                  :class="{ 'is-invalid': errors['請輸入訊息'] }"
-                  as="textarea"
-                  rules="required|max:300"
-                  style="min-height: 10rem"
-                  v-model="contactData.contacts_message"
-                ></VField>
-                <ErrorMessage name="請輸入訊息" class="invalid-feedback" />
-              </div>
-              <div class="form--btn">
-                <button
-                  type="submit"
-                  class="btn btn-primary w-100"
-                  title="送出訊息"
-                >
-                  送出訊息
-                </button>
-              </div>
-            </div>
-          </div>
-        </VForm>
       </div>
       <!-- main -->
     </div>

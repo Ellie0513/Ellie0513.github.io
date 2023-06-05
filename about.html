@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant-TW">
   <head>
     <meta charset="UTF-8" />
     <title>社會影響加速器</title>
@@ -84,6 +84,70 @@
       </div>
     </noscript>
     <div id="app">
+      <nav class="navbar navbar-expand-lg bg-light fixed-top">
+        <div class="container-fluid my-4 px-md-8">
+          <div class="navbar--logo col-auto">
+            <!-- <h1 title="社會影響加速器"> -->
+            <RouterLink
+              to="/"
+              title="社會影響加速器:回首頁"
+              class="navbar-brand logo--img bg-light"
+              aria-hidden="“true”"
+            >
+              社會影響加速器
+            </RouterLink>
+            <!-- </h1> -->
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav" title="主選單">
+              <li class="nav-item nav--about me-3">
+                <RouterLink
+                  to="about"
+                  class="nav-link px-5 py-2 fs-xl fw-regular rounded-1 text-dark center"
+                  >關於我們</RouterLink
+                >
+              </li>
+              <li class="nav-item nav--contact me-3">
+                <RouterLink
+                  to="contact"
+                  class="nav-link px-5 py-2 fs-xl fw-regular rounded-1 text-dark center"
+                  >聯絡我們</RouterLink
+                >
+              </li>
+              <li class="nav-item nav--login me-3">
+                <RouterLink
+                  to="login"
+                  class="nav-link px-5 py-2 fs-xl fw-regular rounded-1 btn btn-outline-dark"
+                  >會員登入
+                </RouterLink>
+              </li>
+
+              <li class="nav-item nav--register me-3">
+                <RouterLink
+                  to="register"
+                  class="nav-link px-5 py-2 fs-xl fw-regular rounded-1 btn btn-dark"
+                  >會員註冊
+                </RouterLink>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- main -->
       <div class="about mt-0 pt-0 container-fluid">
         <h2 class="about--img center">
           <img
@@ -95,20 +159,20 @@
         <div class="about--info">
           <div class="info--box">
             <div class="info--title center">
-              <h3 class="fs-lg-3xl fs-md-xl fs-sm-base fw-medium lh-lg">
+              <h3 class="fs-lg-3xl fs-md-xl fs-base fw-medium lh-lg">
                 — 以終為始的設計 —
               </h3>
             </div>
             <div class="center info--content">
-              <h3 class="lh-lg fs-lg-2xl fs-sm-lg fs-md-sm fw-regular">
+              <h3 class="lh-lg fs-lg-2xl fs-md-lg fs-sm fw-regular">
                 運用社會服務方案的邏輯系統，幫助你在快速變動的步調中，掌握核心和本質
               </h3>
             </div>
           </div>
         </div>
-        <div class="about--animation">
+        <div class="about--animation justify-content-center d-flex">
           <div
-            class="animation--box"
+            class="animation--box col-10"
             id="lottie-container"
             title="本網站發想為以終為始的設計，一、本質思考，二、服務策略，三、成果產出，四、成效影響"
           ></div>
@@ -132,7 +196,6 @@
         <div class="situation--img center">
           <img
             src="../../assets/images/situation.svg"
-            class=""
             alt="一位女性社工面對著筆電，右手拄著頭苦惱著如何設計方案、尋找社工評估效益工具等問題。"
           />
         </div>
@@ -149,7 +212,7 @@
         <div class="slogan--btn center">
           <RouterLink
             to="ask"
-            class="btn btn-dark center text-center"
+            class="btn btn-primary center text-center"
             title="開始使用"
             >開始使用</RouterLink
           >
@@ -176,7 +239,7 @@
             <div class="more--btn">
               <a
                 type="button"
-                class="btn btn-dark text-center"
+                class="btn btn-primary text-center"
                 title="進入串門子社會設計有限公司網站"
                 target="_blank"
                 href="https://thelinkertw.com/ "
@@ -187,6 +250,7 @@
           </div>
         </div>
       </div>
+      <!-- main -->
     </div>
     <script type="module" src="/src/main.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>

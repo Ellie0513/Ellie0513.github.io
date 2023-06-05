@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <title>社會影響加速器</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="社會影響加速器"
+      content="社會影響加速器是台中服務設計的社會企業串門子社會設計融合設計思考及方案設計思維所發展的一個網站，為社工、專業工作者、教育訓練人員及公益捐款單位，設計一款加速方案設計與效益評估的優化工具，希望幫助組織更具體傳遞社會影響力。"
+    />
+    <meta
+      name="keywords"
+      content="社會工作,社會服務,家庭方案,老人方案,青少年方案,團體動力,身心障礙,方案效益報告,方案設計,方案計畫,優化工具,設計思考,AI助手,本質思考,服務策略,成果產出,成效影響"
+    />
+    <meta content="網頁設計：雅典娜整合行銷" property="article:author" />
+    <meta http-equiv="expires" content="-1" />
+    <meta http-equiv="pragma" content="cache" />
+    <meta http-equiv="window-target" content="_top" />
+    <meta
+      name="copyright"
+      content="2023 © 串門子社會影響加速器 │ All Rights Reserved."
+    />
+    <meta name="revisit-after" content="1 days" />
+    <meta name="robots" content="all" />
+    <link rel="icon" href="/src/assets/images/link-logo.png" />
+  </head>
+
+  <body>
+    <style>
+      .nosContainer {
+        max-width: 1000px;
+        margin: 80px auto;
+        width: 100%;
+        padding: 0 24px;
+      }
+
+      .box {
+        display: flex;
+        justify-content: center;
+      }
+
+      .box-img {
+        width: 80%;
+        display: block;
+        max-width: 100%;
+      }
+
+      .box-title {
+        font-size: 28px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+      }
+
+      .box-subTitle {
+        font-size: 24px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+    <meta
+      name="google-site-verification"
+      content="Uutt9RfN0INRlILEpN7thWd7E3ixRVweNMvV0mj8mHo"
+    />
+    <noscript>
+      <div class="nosContainer">
+        <div class="box">
+          <img
+            class="box-img"
+            src="/src/assets/images/Logo+typography-300dpi.png"
+            alt="社會影響加速器Logo"
+          />
+        </div>
+        <h1 class="box-title">
+          您的瀏覽器不支援JavaScript功能，若網頁功能無法正常使用時，請開啟瀏覽器JavaScript狀態
+        </h1>
+        <h2 class="box-subTitle">開啟後，請再重新整理此網頁</h2>
+      </div>
+    </noscript>
+    <div id="app">
+      <nav class="navbar navbar-expand-lg bg-light fixed-top">
+        <div class="container-fluid my-4 px-md-8">
+          <div class="navbar--logo col-auto">
+            <!-- <h1 title="社會影響加速器"> -->
+            <RouterLink
+              to="/"
+              title="社會影響加速器:回首頁"
+              class="navbar-brand logo--img bg-light"
+              aria-hidden="“true”"
+            >
+              社會影響加速器
+            </RouterLink>
+            <!-- </h1> -->
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav" title="主選單">
+              <li class="nav-item nav--about me-3">
+                <RouterLink
+                  to="about"
+                  class="nav-link px-5 py-2 fs-xl fw-regular rounded-1 text-dark center"
+                  >關於我們</RouterLink
+                >
+              </li>
+              <li class="nav-item nav--contact me-3">
+                <RouterLink
+                  to="contact"
+                  class="nav-link px-5 py-2 fs-xl fw-regular rounded-1 text-dark center"
+                  >聯絡我們</RouterLink
+                >
+              </li>
+              <li class="nav-item nav--login me-3">
+                <RouterLink
+                  to="login"
+                  class="nav-link px-5 py-2 fs-xl fw-regular rounded-1 btn btn-outline-dark"
+                  >會員登入
+                </RouterLink>
+              </li>
+
+              <li class="nav-item nav--register me-3">
+                <RouterLink
+                  to="register"
+                  class="nav-link px-5 py-2 fs-xl fw-regular rounded-1 btn btn-dark"
+                  >會員註冊
+                </RouterLink>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- main -->
+      <div class="container my-15">
+        <div class="row justify-content-center mb-11">
+          <h2 class="col-lg-8">
+            <img
+              src="../../assets/images/Logo+typography-300dpi.png"
+              alt="社會影響加速器"
+            />
+          </h2>
+        </div>
+        <VForm v-slot="{ errors }" @submit="registerMember">
+          <div class="row justify-content-center mb-10">
+            <div class="col-lg-6 d-flex flex-column gap-5">
+              <h1 class="fs-3xl fw-medium mb-7">基本資料</h1>
+              <div>
+                <label for="userName" class="form-label">
+                  姓名
+                  <span class="fs-base text-danger" aria-hidden="true">*</span>
+                </label>
+                <VField
+                  v-model="member.members_name"
+                  type="text"
+                  id="userName"
+                  placeholder="請輸入姓名"
+                  class="form-control"
+                  name="姓名"
+                  :class="{ 'is-invalid': errors['姓名'] }"
+                  rules="required"
+                  aria-required="true"
+                />
+                <ErrorMessage name="姓名" class="invalid-feedback" />
+              </div>
+              <div>
+                <label for="userPhone" class="form-label">
+                  電話
+                  <span class="fs-base text-danger" aria-hidden="true">*</span>
+                </label>
+                <VField
+                  v-model="member.members_phone"
+                  type="text"
+                  id="userPhone"
+                  placeholder="0900123123"
+                  class="form-control"
+                  name="電話"
+                  :class="{ 'is-invalid': errors['電話'] }"
+                  :rules="isPhone"
+                  aria-required="true"
+                />
+                <ErrorMessage name="電話" class="invalid-feedback" />
+              </div>
+              <div>
+                <label for="userPhone" class="form-label">
+                  電子信箱
+                  <span class="fs-base text-danger" aria-hidden="true">*</span>
+                </label>
+                <VField
+                  v-model="member.members_email"
+                  type="text"
+                  id="userEmail"
+                  placeholder="請輸入電子信箱"
+                  class="form-control"
+                  name="電子信箱"
+                  :class="{ 'is-invalid': errors['電子信箱'] }"
+                  rules="email|required"
+                  aria-required="true"
+                />
+                <ErrorMessage name="電子信箱" class="invalid-feedback" />
+              </div>
+              <div>
+                <p class="form-label mb-2">
+                  您的性別<span class="text-danger" aria-hidden="true">*</span>
+                </p>
+                <div class="d-flex gap-5">
+                  <div class="form-check">
+                    <input
+                      v-model="member.members_sex"
+                      value="生理男"
+                      class="form-check-input"
+                      type="radio"
+                      name="userGender"
+                      id="userGenderMale"
+                    />
+                    <label class="form-check-label" for="userGenderMale"
+                      >生理男</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      v-model="member.members_sex"
+                      value="生理女"
+                      class="form-check-input"
+                      type="radio"
+                      name="userGender"
+                      id="userGenderFemale"
+                    />
+                    <label class="form-check-label" for="userGenderFemale"
+                      >生理女</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      v-model="member.members_sex"
+                      value="不提供"
+                      class="form-check-input"
+                      type="radio"
+                      name="userGender"
+                      id="userGenderNo"
+                    />
+                    <label class="form-check-label" for="userGenderNo"
+                      >不提供</label
+                    >
+                  </div>
+                </div>
+              </div>
+              <div>
+                <label for="membersJobTitle" class="form-label">
+                  您的職稱
+                  <span class="fs-base text-danger" aria-hidden="true">*</span>
+                </label>
+                <VField
+                  class="form-select"
+                  name="您的職稱"
+                  id="membersJobTitle"
+                  v-model="member.members_job_title"
+                  :class="{ 'is-invalid': errors['您的職稱'] }"
+                  as="select"
+                  rules="required"
+                  aria-required="true"
+                >
+                  <option value="" disabled>請選擇</option>
+                  <option
+                    :value="memberJobTitle"
+                    v-for="memberJobTitle in membersJobTitle"
+                    :key="memberJobTitle"
+                  >
+                    {{ memberJobTitle }}
+                  </option>
+                </VField>
+                <ErrorMessage name="您的職稱" class="invalid-feedback" />
+              </div>
+              <div>
+                <div class="mb-3">
+                  <label for="userCompany" class="form-label mb-2"
+                    >任職單位（選填）</label
+                  >
+                  <input
+                    v-model="member.members_working_unit"
+                    type="text"
+                    class="form-control"
+                    id="userCompany"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-6">
+              <div class="form-check d-flex align-items-center gap-2 mb-7">
+                <VField
+                  class="form-check-input fs-base"
+                  type="checkbox"
+                  id="memberBenefits"
+                  name="會員權益"
+                  :class="{ 'is-invalid': errors['會員權益'] }"
+                  :rules="{ required }"
+                  :value="true"
+                />
+                <label class="form-check-label" for="memberBenefits"
+                  >我已詳細閱讀並同意遵守社會影響加速器
+                  <RouterLink
+                    to="member"
+                    class="d-inline-block text-decoration-underline"
+                    target="_blank"
+                  >
+                    會員權益
+                  </RouterLink>
+                  與相關規範
+                </label>
+              </div>
+              <div class="d-flex flex-column gap-7">
+                <button type="submit" class="btn btn-primary w-100">
+                  註冊成為會員
+                </button>
+              </div>
+            </div>
+          </div>
+        </VForm>
+      </div>
+      <!-- main -->
+    </div>
+    <script type="module" src="/src/main.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+  </body>
+</html>

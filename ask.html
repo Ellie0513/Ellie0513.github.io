@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <title>社會影響加速器</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="社會影響加速器"
+      content="社會影響加速器是台中服務設計的社會企業串門子社會設計融合設計思考及方案設計思維所發展的一個網站，為社工、專業工作者、教育訓練人員及公益捐款單位，設計一款加速方案設計與效益評估的優化工具，希望幫助組織更具體傳遞社會影響力。"
+    />
+    <meta
+      name="keywords"
+      content="社會工作,社會服務,家庭方案,老人方案,青少年方案,團體動力,身心障礙,方案效益報告,方案設計,方案計畫,優化工具,設計思考,AI助手,本質思考,服務策略,成果產出,成效影響"
+    />
+    <meta content="網頁設計：雅典娜整合行銷" property="article:author" />
+    <meta http-equiv="expires" content="-1" />
+    <meta http-equiv="pragma" content="cache" />
+    <meta http-equiv="window-target" content="_top" />
+    <meta
+      name="copyright"
+      content="2023 © 串門子社會影響加速器 │ All Rights Reserved."
+    />
+    <meta name="revisit-after" content="1 days" />
+    <meta name="robots" content="all" />
+    <link rel="icon" href="/src/assets/images/link-logo.png" />
+  </head>
+
+  <body>
+    <style>
+      .nosContainer {
+        max-width: 1000px;
+        margin: 80px auto;
+        width: 100%;
+        padding: 0 24px;
+      }
+
+      .box {
+        display: flex;
+        justify-content: center;
+      }
+
+      .box-img {
+        width: 80%;
+        display: block;
+        max-width: 100%;
+      }
+
+      .box-title {
+        font-size: 28px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+      }
+
+      .box-subTitle {
+        font-size: 24px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+    <meta
+      name="google-site-verification"
+      content="Uutt9RfN0INRlILEpN7thWd7E3ixRVweNMvV0mj8mHo"
+    />
+    <noscript>
+      <div class="nosContainer">
+        <div class="box">
+          <img
+            class="box-img"
+            src="/src/assets/images/Logo+typography-300dpi.png"
+            alt="社會影響加速器Logo"
+          />
+        </div>
+        <h1 class="box-title">
+          您的瀏覽器不支援JavaScript功能，若網頁功能無法正常使用時，請開啟瀏覽器JavaScript狀態
+        </h1>
+        <h2 class="box-subTitle">開啟後，請再重新整理此網頁</h2>
+      </div>
+    </noscript>
+    <div id="app">
+      <nav class="navbar navbar-expand-lg bg-light fixed-top">
+        <div class="container-fluid my-4 px-md-8">
+          <div class="navbar--logo col-auto">
+            <!-- <h1 title="社會影響加速器"> -->
+            <RouterLink
+              to="/"
+              title="社會影響加速器:回首頁"
+              class="navbar-brand logo--img bg-light"
+              aria-hidden="“true”"
+            >
+              社會影響加速器
+            </RouterLink>
+            <!-- </h1> -->
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav" title="主選單">
+              <li class="nav-item nav--about me-3">
+                <RouterLink
+                  to="about"
+                  class="nav-link px-5 py-2 fs-xl fw-regular rounded-1 text-dark center"
+                  >關於我們</RouterLink
+                >
+              </li>
+              <li class="nav-item nav--contact me-3">
+                <RouterLink
+                  to="contact"
+                  class="nav-link px-5 py-2 fs-xl fw-regular rounded-1 text-dark center"
+                  >聯絡我們</RouterLink
+                >
+              </li>
+              <li class="nav-item nav--login me-3">
+                <RouterLink
+                  to="login"
+                  class="nav-link px-5 py-2 fs-xl fw-regular rounded-1 btn btn-outline-dark"
+                  >會員登入
+                </RouterLink>
+              </li>
+
+              <li class="nav-item nav--register me-3">
+                <RouterLink
+                  to="register"
+                  class="nav-link px-5 py-2 fs-xl fw-regular rounded-1 btn btn-dark"
+                  >會員註冊
+                </RouterLink>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- main -->
+      <div :class="{ active: isLoading }" class="loading-overlay">
+        <div class="d-flex flex-column align-items-center gap-9">
+          <div class="loading"></div>
+          <p class="text-secondary fs-3xl">答案正在前進的路上！</p>
+        </div>
+      </div>
+      <div class="container my-15">
+        <div class="row justify-content-center mb-11">
+          <div class="col-lg-6">
+            <img
+              src="../../assets/images/Logo+typography-300dpi.png"
+              alt="社會影響加速器"
+            />
+          </div>
+        </div>
+        <VForm v-slot="{ errors, resetForm }" @submit="askQuestion">
+          <div class="row justify-content-center mb-16">
+            <div class="col-lg-10 d-flex flex-column gap-6">
+              <div
+                class="row border-bottom border-gray-400 align-items-center pb-2"
+              >
+                <div class="col-6 ps-0">
+                  <div class="d-flex align-items-center gap-9">
+                    <span class="fs-6xl fw-medium">01</span>先選擇你的身份
+                  </div>
+                </div>
+                <div class="col-6 pe-0">
+                  <VField
+                    class="form-select px-5 py-2"
+                    name="你的身份"
+                    v-model="question.questions_member_type"
+                    :class="{ 'is-invalid': errors['你的身份'] }"
+                    as="select"
+                    rules="required"
+                  >
+                    <option value="" disabled>請選擇</option>
+                    <option
+                      :value="memberIdentityItem"
+                      v-for="memberIdentityItem in memberIdentityList"
+                      :key="memberIdentityItem"
+                    >
+                      {{ memberIdentityItem }}
+                    </option>
+                  </VField>
+                  <ErrorMessage name="你的身份" class="invalid-feedback" />
+                </div>
+              </div>
+              <div
+                class="row border-bottom border-gray-400 align-items-center pb-2"
+              >
+                <div class="col-6 ps-0">
+                  <div class="d-flex align-items-center gap-9">
+                    <span class="fs-6xl fw-medium">02</span> 你需要什麼協助呢？
+                  </div>
+                </div>
+                <div class="col-6 pe-0">
+                  <VField
+                    class="form-select px-5 py-2"
+                    name="你需要什麼協助呢？"
+                    v-model="question.questions_type"
+                    :class="{ 'is-invalid': errors['你需要什麼協助呢？'] }"
+                    as="select"
+                    rules="required"
+                  >
+                    <option value="" disabled>請選擇</option>
+                    <option
+                      :value="questionsTypeItem"
+                      v-for="questionsTypeItem in questionsTypeList"
+                      :key="questionsTypeItem"
+                    >
+                      {{ questionsTypeItem }}
+                    </option>
+                  </VField>
+                  <ErrorMessage
+                    name="你需要什麼協助呢？"
+                    class="invalid-feedback"
+                  />
+                </div>
+              </div>
+              <div
+                class="row border-bottom border-gray-400 align-items-center pb-2"
+              >
+                <div class="col-6 ps-0">
+                  <div class="d-flex align-items-top gap-9">
+                    <span class="fs-6xl fw-medium">03</span>
+                    <label for="exampleFormControlTextarea1" class="form-label">
+                      <p>請分享你的服務雛型</p>
+                      包含服務對象、議題、處遇內容及時間區間等，需控制在300字內。避免使用諧音或計畫名稱，例如：中途之家或有愛無礙，用服務內容描述更精準喔！</label
+                    >
+                  </div>
+                </div>
+                <div class="col-6 pe-0">
+                  <div class="mb-3">
+                    <VField
+                      class="form-control px-5 py-2"
+                      placeholder="最多 300 字元 
+    範例(1) 
+    我是社福中心的社工，正在進行高風險家庭方案，主要是和20位家長進行為期10週的支持團體，期待增強親子溝通與家庭互動，改善家庭動力。
+    範例(2)
+    我是基金會的教育訓練部門專員，正在規劃高風險家庭的社工增能方案，期待透過社工投入團體規劃與進行，陪伴家庭增強親子溝通與家庭互動，改善家庭動力。"
+                      name="請分享你的服務雛型"
+                      v-model="question.questions_content"
+                      :class="{ 'is-invalid': errors['請分享你的服務雛型'] }"
+                      as="textarea"
+                      rules="required|max:300"
+                      style="min-height: 21rem"
+                    >
+                    </VField>
+                    <ErrorMessage
+                      name="請分享你的服務雛型"
+                      class="invalid-feedback"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="row border-bottom border-gray-400 align-items-center pb-2"
+              >
+                <div class="col-6 ps-0">
+                  <div class="d-flex align-items-center gap-9">
+                    <span class="fs-6xl fw-medium">04</span
+                    >你希望得到幾個字內的回覆呢？
+                  </div>
+                </div>
+                <div class="col-6 pe-0">
+                  <VField
+                    class="form-select px-5 py-2"
+                    name="回覆字數"
+                    v-model="question.questions_max_token"
+                    :class="{ 'is-invalid': errors['回覆字數'] }"
+                    as="select"
+                    rules="required"
+                  >
+                    <option value="" disabled selected>請選擇回覆字數</option>
+                    <option value="250">250字以下</option>
+                    <option disabled value="251">
+                      251字以上(付費版，陸續解鎖中)
+                    </option>
+                  </VField>
+                  <ErrorMessage name="回覆字數" class="invalid-feedback" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-10 px-0">
+              <div class="row justify-content-center">
+                <div class="col-12">
+                  <div class="d-flex gap-7 ms-auto justify-content-end">
+                    <button
+                      type="button"
+                      class="btn btn-outline-primary"
+                      @click="resetForm"
+                    >
+                      清除內容
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                      我要發問
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </VForm>
+      </div>
+      <!-- main -->
+    </div>
+    <script type="module" src="/src/main.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+  </body>
+</html>

@@ -63,6 +63,20 @@
         display: flex;
         justify-content: center;
       }
+      .navbar--logo {
+        width: 15rem;
+      }
+
+      .logo--img {
+        background-image: url("../assets/images/Logo+typography-300dpi.svg");
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 106%;
+        display: block;
+        overflow: hidden;
+        text-indent: -200%;
+      }
     </style>
     <meta
       name="google-site-verification"
@@ -87,16 +101,16 @@
       <nav class="navbar navbar-expand-lg bg-light fixed-top">
         <div class="container-fluid my-4 px-md-8">
           <div class="navbar--logo col-auto">
-            <!-- <h1 title="社會影響加速器"> -->
-            <RouterLink
-              to="/"
-              title="社會影響加速器:回首頁"
-              class="navbar-brand logo--img bg-light"
-              aria-hidden="“true”"
-            >
-              社會影響加速器
-            </RouterLink>
-            <!-- </h1> -->
+            <h1 title="社會影響加速器">
+              <RouterLink
+                to="/"
+                title="社會影響加速器:回首頁"
+                class="navbar-brand logo--img bg-light"
+                aria-hidden="“true”"
+              >
+                社會影響加速器
+              </RouterLink>
+            </h1>
           </div>
           <button
             class="navbar-toggler"
